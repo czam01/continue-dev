@@ -34,4 +34,52 @@ Esta configuración está diseñada para consumir **Amazon Bedrock** como provee
 - 🔒 **Compliance**: Cumple con regulaciones corporativas
 - ⚡ **Baja Latencia**: Infraestructura AWS optimizada
 
+```mermaid
+graph TB
+    subgraph "💻 Development Environment"
+        A[👨‍💻 Cloud Engineer] --> B[VS Code IDE]
+        B --> C[Continue.dev Extension]
+    end
+    
+    subgraph "☁️ AWS Cloud"
+        D[🔐 AWS IAM Authentication]
+        E[🛡️ Amazon Bedrock Service]
+        
+        subgraph "🤖 Foundation Models"
+            F1[🧠 Claude 4 Sonnet<br/>Complex Reasoning]
+            F3[🦙 Amazon Nova Premiere<br/>Code Generation]
+
+        end
+    end
+    
+    subgraph "🎯 Use Cases"
+        G1[🔍 Code Review]
+        G2[🧪 AWS Architecture]
+        G5[🏗️ Architecture Design]
+    end
+    
+    %% Connections
+    C -->|API Calls| D
+    D -->|Authenticated| E
+    E --> F1
+    E --> F3
+
+
+    
+    F1 --> G1
+    F1 --> G5
+    F3 --> G2
+
+    
+    %% Styling
+    classDef aws fill:#FF9900,stroke:#232F3E,stroke-width:2px,color:#fff
+    classDef llm fill:#4CAF50,stroke:#2E7D32,stroke-width:2px,color:#fff
+    classDef dev fill:#2196F3,stroke:#1565C0,stroke-width:2px,color:#fff
+    classDef usecase fill:#9C27B0,stroke:#6A1B9A,stroke-width:2px,color:#fff
+    
+    class D,E aws
+    class F1,F2,F3,F4,F5 llm
+    class A,B,C dev
+    class G1,G2,G3,G4,G5 usecase
+```
 
