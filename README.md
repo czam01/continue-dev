@@ -83,3 +83,33 @@ graph TB
     class G1,G2,G3,G4,G5 usecase
 ```
 
+```mermaid
+sequenceDiagram
+    participant Dev as 👨‍💻 Cloud Engineer
+    participant VSCode as 💻 VS Code
+    participant Continue as 🔌 Extensión Continue
+    participant AWS as ☁️ AWS Bedrock
+    participant Claude as 🧠 Claude 4
+    
+    Dev->>VSCode: Abre el proyecto
+    VSCode->>Continue: Carga la extensión
+    Continue->>AWS: Se autentica con IAM
+    
+    Note over Dev,Claude: Escenario de Revisión de Código
+    Dev->>Continue: Comando /review
+    Continue->>AWS: Solicitud con contexto del código
+    AWS->>Claude: Enruta a Claude 4
+    Claude->>AWS: Respuesta con análisis
+    AWS->>Continue: Respuesta formateada
+    Continue->>VSCode: Muestra los resultados
+    VSCode->>Dev: Presenta sugerencias
+    
+    Note over Dev,Claude: Escenario de Pregunta Rápida  
+    Dev->>Continue: Pregunta rápida
+    Continue->>AWS: Solicitud ligera
+    AWS->>Claude: Enruta a Claude 4
+    Claude->>AWS: Respuesta rápida
+    AWS->>Continue: Respuesta inmediata
+    Continue->>VSCode: Muestra instantáneamente
+    VSCode->>Dev: Presenta la respuesta
+```
