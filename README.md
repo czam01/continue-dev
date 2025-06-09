@@ -47,7 +47,7 @@ graph TB
         
         subgraph "🤖 Foundation Models"
             F1[🧠 Claude 4 Sonnet<br/>Complex Reasoning]
-            F3[🦙 Amazon Nova Premiere<br/>Code Generation]
+            F3[🧠 Amazon Nova Premiere<br/>Code Generation]
 
         end
     end
