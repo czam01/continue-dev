@@ -22,7 +22,7 @@ Este repositorio contiene mi configuración completa de **Continue.dev**, incluy
 
 ---
 
-## ☁️ Amazon Bedrock Integration
+## ☁️ Integración con Amazon Bedrock
 
 ### **🚀 ¿Por qué Amazon Bedrock?**
 
@@ -33,6 +33,10 @@ Esta configuración está diseñada para consumir **Amazon Bedrock** como provee
 - 💰 **Costo Optimizado**: Pago por uso sin suscripciones mensuales
 - 🔒 **Compliance**: Cumple con regulaciones corporativas
 - ⚡ **Baja Latencia**: Infraestructura AWS optimizada
+
+### **🚀 Diagrama de Flujo de Arquitectura**
+
+Este diagrama ilustra la arquitectura de un entorno de desarrollo basado en inteligencia artificial que integra herramientas locales con servicios de AWS. Un ingeniero de la nube utiliza VS Code con la extensión Continue.dev para conectarse de forma segura a Amazon Bedrock a través de autenticación IAM, accediendo así a modelos de lenguaje avanzados como Claude 4 Sonnet (especializado en razonamiento complejo) y Amazon Nova Premiere (optimizado para generación de código). Esta configuración permite aprovechar las capacidades de IA para casos de uso específicos como revisión de código, diseño de arquitecturas AWS y planificación de arquitecturas de sistemas, creando un flujo de trabajo eficiente que combina el desarrollo local con la potencia de los servicios de IA en la nube de Amazon.
 
 ```mermaid
 graph TB
@@ -82,6 +86,10 @@ graph TB
     class A,B,C dev
     class G1,G2,G3,G4,G5 usecase
 ```
+
+### **🔄 Flujo de Interacción: Desarrollo Asistido por IA**
+
+Este diagrama de secuencia detalla el flujo completo de comunicación entre un ingeniero de la nube y los servicios de IA de AWS durante el proceso de desarrollo. El proceso inicia cuando el desarrollador abre su proyecto en VS Code, activando automáticamente la extensión Continue que se autentica con AWS Bedrock mediante credenciales IAM. Una vez establecida la conexión, el sistema permite dos tipos principales de interacciones: revisiones de código profundas (donde el desarrollador ejecuta comandos como /review para obtener análisis detallados del código) y consultas rápidas para resolver dudas puntuales. En ambos casos, las solicitudes viajan desde VS Code a través de Continue hacia AWS Bedrock, que las enruta al modelo Claude 4 para su procesamiento, y las respuestas regresan por el mismo camino hasta presentarse al desarrollador de manera clara y contextualizada en su entorno de desarrollo.
 
 ```mermaid
 sequenceDiagram
