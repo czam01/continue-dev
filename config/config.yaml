@@ -1,0 +1,66 @@
+name: Local Assistant
+version: 1.0.0
+schema: v1
+models:
+  - name: Sonnet 4
+    provider: bedrock
+    model: us.anthropic.claude-sonnet-4-20250514-v1:0 
+    env:
+      region: us-east-1
+      profile: aws-profile
+    roles:
+      - chat
+      - edit
+      - apply
+      - summarize
+      - autocomplete
+  - name: Opus 4
+    provider: bedrock
+    model: us.anthropic.claude-opus-4-20250514-v1:0
+    env:
+      region: us-east-1
+      profile: aws-profile
+    roles:
+      - chat
+      - edit
+      - apply
+      - summarize
+      - autocomplete
+  - name: AWS Nova Premiere
+    provider: bedrock
+    model: us.amazon.nova-premier-v1:0
+    env:
+      region: us-east-1
+      profile: aws-profile
+    roles:
+      - chat
+      - edit
+      - apply
+  - name: DeepSeek
+    provider: bedrock
+    model: us.deepseek.r1-v1:0
+    env:
+      region: us-east-1
+      profile: aws-profile
+    roles:
+      - chat
+      - edit
+      - apply
+  - name: Sonnet 3.7
+    provider: bedrock
+    model: us.anthropic.claude-3-7-sonnet-20250219-v1:0
+    env:
+      region: us-east-1
+      profile: aws-profile
+    roles:
+      - chat
+      - edit
+      - apply
+context:
+  - provider: code
+  - provider: docs
+  - provider: diff
+  - provider: terminal
+  - provider: problems
+  - provider: folder
+  - provider: codebase
